@@ -3,7 +3,10 @@
 
 int main() {
 
-    printf("Hello");
+    int age = 20;
+    int *ptr = &age;
+
+    printf("Hello %d", *ptr);
 
     return 0;
-}
+} 
