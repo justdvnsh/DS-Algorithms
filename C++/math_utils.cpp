@@ -1,16 +1,28 @@
 #include "math_utils.h"
 
-double area(int length, int width)
+namespace mth 
 {
-    return length * width;
-}
 
-double area(int length)
-{
-    return length * length;
-}
+    template <typename T>
+    void swap(T &x, T &y) 
+    {
+        T temp = x;
+        x = y;
+        y = temp;
+    }
 
-double area(Rectangle retangle)
-{
-    return retangle.length * retangle.width;
+    double area(int length, int width)
+    {
+        return length * width;
+    }
+
+    double area(int length)
+    {
+        return length * length;
+    }
+
+    double area(Rectangle retangle)
+    {
+        return retangle.calculateArea();
+    }
 }
