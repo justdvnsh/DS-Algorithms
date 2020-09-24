@@ -11,4 +11,6 @@ int main()
     array.insertAtPosition(100, 3);
     array.insertAtPosition(200, 4);
     array.insertAtPosition(300, 5);
+
+    array.insertAtPositionUnsorted(999, 1);
 }

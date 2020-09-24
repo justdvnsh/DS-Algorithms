@@ -12,6 +12,9 @@ class MyArray
         MyArray(std::vector<int> data);
         void traverse();
         void insertAtPosition(int value, int position);
+        void insertAtPositionUnsorted(int value, int position);
+        void deleteAtPosition(int position);
+        void deleteAtPositionUnsorted(int position);
 };
 
 #endif
