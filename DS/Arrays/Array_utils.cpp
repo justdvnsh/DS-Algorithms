@@ -2,14 +2,16 @@
 #include <vector>
 #include <iostream>
 
-MyArray::MyArray(std::vector<int> arr)
+template<class T>
+MyArray<T>::MyArray(std::vector<T> arr)
 {
     data = arr;
 }
 
-void MyArray::traverse()
+template<class T>
+void MyArray<T>::traverse()
 {
-    for (int el : data)
+    for (T el : data)
     {
         std::cout << el << "\t";
     }
@@ -18,7 +20,8 @@ void MyArray::traverse()
 
 // if array is sorted .
 // time complexity O(n)
-void MyArray::insertAtPosition(int value, int position)
+template<class T>
+void MyArray<T>::insertAtPosition(int value, int position)
 {
     for (int i = data.size() - 1; i >= position - 1; i--)
     {
@@ -31,7 +34,8 @@ void MyArray::insertAtPosition(int value, int position)
 
 // if array is not sorted .
 // time complexity O(1)
-void MyArray::insertAtPositionUnsorted(int value, int position)
+template <class T>
+void MyArray<T>::insertAtPositionUnsorted(int value, int position)
 {
     int temp = data[position];
     data[position] = value;
@@ -39,3 +43,27 @@ void MyArray::insertAtPositionUnsorted(int value, int position)
 
     MyArray::traverse();
 }
+
+// if array is not sorted
+// time complexity O(n)
+template <class T>
+void MyArray<T>::deleteAtPosition(int position)
+{
+    for (int i = position - 1; i <= data.size() - 1; i++)
+    {
+        data[i] = data[i + 1];
+    }
+
+    MyArray::traverse();
+}
+
+// if array is unsorted
+template <class T>
+void MyArray<T>::deleteAtPositionUnsorted(int position)
+{
+    data[position - 1] = data[data.size() - 1];
+
+    MyArray::traverse();
+}
+
+template class MyArray<int>;

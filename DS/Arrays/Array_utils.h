@@ -4,12 +4,12 @@
 #include <iostream>
 #include <vector>
 
-class MyArray 
+template <typename T> class MyArray 
 {
-    std::vector<int> data;
+    std::vector<T> data;
 
     public:
-        MyArray(std::vector<int> data);
+        MyArray(std::vector<T> data);
         void traverse();
         void insertAtPosition(int value, int position);
         void insertAtPositionUnsorted(int value, int position);
